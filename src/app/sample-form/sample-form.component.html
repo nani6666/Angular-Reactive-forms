@@ -1,0 +1,35 @@
+<div class="container">
+    <form [formGroup]="sampleForm" (ngSubmit)="addPost(sampleForm.value)">
+        <div class="">
+            <div class="">
+                <div class="form-group"><label>title</label>
+                    <input type="text" class="form-control" formControlName="title">
+                </div>
+
+                <div class="form-group"><label>Description</label>
+                    <textarea class="form-control" formControlName="description"></textarea>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-warning" value="" [disabled]="!sampleForm.valid">Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <div>
+        <div class="row">
+            <div class="col-md-3" *ngFor="let arr of postArray">
+                <div class="card text-Red bg-white mb-3" style="max-width: 20rem;">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ arr.title}}</h4>
+                        <div class="card-text">{{ arr.description}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
